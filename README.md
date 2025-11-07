@@ -1,70 +1,70 @@
 # StockView
 
-A Flutter application that provides cryptocurrency market data and analysis, inspired by TradingView.
+TradingView에서 영감을 받아 제작한 암호화폐 시장 데이터 분석 및 시각화 애플리케이션입니다.
 
-This app displays a list of top cryptocurrencies and provides a detailed view for each coin, including an interactive candlestick chart and buy recommendations based on technical analysis strategies.
+이 앱은 시가총액 상위 암호화폐 목록을 표시하고, 각 코인에 대한 상세 보기 화면을 제공합니다. 상세 화면에는 기술적 분석 전략에 기반한 매수 추천 지점이 표시된 인터랙티브 캔들 차트가 포함됩니다.
 
-## Features
+## 주요 기능
 
-- **Top 20 Coin List**: Displays the top 20 cryptocurrencies sorted by market capitalization.
-- **Interactive Candlestick Chart**: The detail screen features a candlestick chart with the following functionalities:
-  - **Zoom**: Use the mouse wheel to zoom in and out.
-  - **Pan**: Click and drag to pan the chart horizontally.
-  - **Crosshair/Trackball**: Tap on the chart to see detailed information for a specific data point.
-- **Technical Analysis**: Automatically analyzes chart data to provide buy recommendations.
-  - **Strategies**: 20-day Moving Average, Rising Divergence (simplified).
-  - **Visual Indicators**: Buy recommendations are clearly marked on the chart.
-- **TradingView-inspired Design**: Features a professional dark theme, clear data visualization, and a responsive layout.
+- **시가총액 상위 20개 코인 목록**: 시가총액 순으로 정렬된 상위 20개 암호화폐 목록을 표시합니다.
+- **인터랙티브 캔들 차트**: 상세 화면의 캔들 차트는 다음과 같은 상호작용 기능을 제공합니다:
+  - **확대/축소**: 마우스 휠을 사용하여 차트를 확대하거나 축소할 수 있습니다.
+  - **이동 (Pan)**: 차트를 클릭하고 드래그하여 수평으로 이동할 수 있습니다.
+  - **십자선/트랙볼**: 차트를 탭하여 특정 데이터 지점의 상세 정보를 확인할 수 있습니다.
+- **기술적 분석**: 차트 데이터를 자동으로 분석하여 매수 추천을 제공합니다.
+  - **적용된 전략**: 20일 이동평균선, 상승 다이버전스(간소화).
+  - **시각적 표시**: 매수 추천 지점은 차트 위에 명확하게 표시됩니다.
+- **TradingView 스타일 디자인**: 전문적인 다크 테마, 명확한 데이터 시각화 및 반응형 레이아웃을 특징으로 합니다.
 
-## Tech Stack
+## 기술 스택
 
-- **Framework**: Flutter
-- **Architecture**: Clean Architecture (Data, Domain, Presentation layers) with MVVM pattern.
-- **State Management**: Provider
-- **Charting**: `syncfusion_flutter_charts`
-- **Data Source**: CoinGecko API
-- **Typography**: `google_fonts`
+- **프레임워크**: Flutter
+- **아키텍처**: 클린 아키텍처 (데이터, 도메인, 프레젠테이션 계층) 및 MVVM 패턴
+- **상태 관리**: Provider
+- **차트**: `syncfusion_flutter_charts`
+- **데이터 소스**: CoinGecko API
+- **타이포그래피**: `google_fonts`
 
-## Getting Started
+## 시작하기
 
-### Prerequisites
+### 사전 요구사항
 
-- Flutter SDK installed.
-- A configured IDE (like VS Code or Android Studio).
+- Flutter SDK 설치
+- VS Code 또는 Android Studio와 같은 IDE 환경 설정
 
-### Installation
+### 설치 방법
 
-1. **Clone the repository:**
+1. **리포지토리 클론:**
    ```sh
    git clone https://github.com/odododot/repository.git
    cd repository
    ```
 
-2. **Install dependencies:**
+2. **의존성 설치:**
    ```sh
    flutter pub get
    ```
 
-3. **Run the application:**
+3. **애플리케이션 실행:**
    ```sh
    flutter run
    ```
 
-## Project Structure
+## 프로젝트 구조
 
-The project follows the principles of Clean Architecture to ensure a separation of concerns, making the codebase scalable and maintainable.
+이 프로젝트는 확장 및 유지보수가 용이하도록 관심사를 분리하는 클린 아키텍처 원칙을 따릅니다.
 
 - `lib/`
-  - `main.dart`: The entry point of the application, responsible for setting up dependency injection.
-  - `data/`: Contains the data layer, responsible for fetching data from remote (API) and local sources.
-    - `model/`: Data Transfer Objects (DTOs).
-    - `data_source/`: Interfaces and implementations for data sources.
-    - `repository/`: Implementation of the domain layer's repository interface.
-  - `domain/`: Contains the core business logic and rules of the application.
-    - `entity/`: Core business objects.
-    - `repository/`: Abstract repository interfaces.
-    - `use_case/`: Individual business logic units.
-  - `presentation/`: Contains the UI layer, built using the MVVM pattern.
-    - `view/`: The Flutter widgets (screens).
-    - `viewmodel/`: The ViewModels (`ChangeNotifier`s) that hold the UI state.
-    - `widget/`: Reusable UI components.
+  - `main.dart`: 앱의 진입점으로, 의존성 주입 설정을 담당합니다.
+  - `data/`: 원격(API) 및 로컬 소스에서 데이터를 가져오는 데이터 계층입니다.
+    - `model/`: 데이터 전송 객체 (DTOs).
+    - `data_source/`: 데이터 소스의 인터페이스 및 구현체.
+    - `repository/`: 도메인 계층의 리포지토리 인터페이스 구현체.
+  - `domain/`: 앱의 핵심 비즈니스 로직과 규칙을 포함하는 도메인 계층입니다.
+    - `entity/`: 핵심 비즈니스 객체.
+    - `repository/`: 추상 리포지토리 인터페이스.
+    - `use_case/`: 개별 비즈니스 로직 단위.
+  - `presentation/`: MVVM 패턴을 사용하여 구축된 UI 계층입니다.
+    - `view/`: Flutter 위젯 (화면).
+    - `viewmodel/`: UI 상태를 관리하는 ViewModel (`ChangeNotifier`).
+    - `widget/`: 재사용 가능한 UI 컴포넌트.
